@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import CoreData
 
 struct Capsule1: View {
     
@@ -412,12 +413,30 @@ struct FourthView: View {
 
 
 
-let storedUsername = "JV"
-let storedPassword = "JV"
+//let storedUsername = "JV"
+//let storedPassword = "JV"
+func validateUser(user: User, name: String, password: String) -> Bool {
+    print("JG1")
+        if user.name == name && user.password == password
+        {
+            print("JG2")
+           return true
+        }
+        
+    print("JG3")
+    return false
+}
 
 
 
 struct ContentView: View {
+    
+    @Environment(\.managedObjectContext) private var viewContext
+
+    @FetchRequest(entity: User.entity(), sortDescriptors: [])
+
+    var users: FetchedResults<User>
+   
     //@State private var showingSheet = false
     @State var username: String = ""
     @State var password: String = ""
@@ -428,17 +447,15 @@ struct ContentView: View {
     let name2 = Text("Kim Petras")
     let name3 = Text("Joji")
     
-    
    
-    var body: some View {
-       
+    var body:   some View {
+
         ZStack{
             LinearGradient(gradient: Gradient(colors: [.top, .bottom]), startPoint: .top, endPoint: .bottom)
                 .edgesIgnoringSafeArea(.all)
             
         
         VStack{
-            
             WelcomeText()
             WelcomeImage()
             UsernameTextField(username: $username)
@@ -449,15 +466,23 @@ struct ContentView: View {
                                 .offset(y: -10)
                                 .foregroundColor(.white)
                         }
-          
+            
             Button(action: {
-                    if self.username == storedUsername && self.password == storedPassword
+                print("JG6 {} {}", self.username, self.password)
+                print(users)
+                for user in users {
+                    if validateUser(user:user, name:self.username, password:self.password)
                     {
+                        print("JG4")
+
                         self.authenticationDidSucceed = true
                         self.authenticationDidFail = false
                     }else {
+                        print("JG5")
                         self.authenticationDidFail = true
+                    
                     }
+                }
             })
             {
                 LoginButtonContent()
@@ -465,7 +490,6 @@ struct ContentView: View {
         }
         .padding()
         //end of vstack
-            
             if authenticationDidSucceed {
 
                HostingTabBar()
@@ -481,9 +505,11 @@ struct ContentView: View {
     
 }//end of content view
 
+
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        //ContentView()
+        ContentView().environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
     }
 }
 

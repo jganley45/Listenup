@@ -60,6 +60,8 @@ struct HostingTabBar: View {
 struct HostingTabBar_Previews: PreviewProvider {
     static var previews: some View {
         HostingTabBar()
-    }
+   
+        ContentView().environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
+            }
 }
 

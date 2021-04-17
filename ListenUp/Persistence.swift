@@ -13,10 +13,13 @@ struct PersistenceController {
     static var preview: PersistenceController = {
         let result = PersistenceController(inMemory: true)
         let viewContext = result.container.viewContext
-        //for _ in 0..<10 {
-        //    let newItem = Item(context: viewContext)
-        //    newItem.timestamp = Date()
-        //}
+        let cnt : Int = 0
+        print("blah")
+        //for _ in 0..<2 {
+        //    let newUser = User(context: viewContext)
+        //    newUser.name = "JG"
+        //    newUser.password = "foo"
+       // }
         do {
             try viewContext.save()
         } catch {
@@ -31,7 +34,7 @@ struct PersistenceController {
     let container: NSPersistentContainer
 
     init(inMemory: Bool = false) {
-        container = NSPersistentContainer(name: "listenup")
+        container = NSPersistentContainer(name: "Model")
         if inMemory {
             container.persistentStoreDescriptions.first!.url = URL(fileURLWithPath: "/dev/null")
         }

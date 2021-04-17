@@ -25,6 +25,7 @@
 		AFD45C2D257B221C000DEE85 /* ColorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFD45C2C257B221C000DEE85 /* ColorManager.swift */; };
 		F1E376E2262B5FED00F53C9F /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1E376E1262B5FEC00F53C9F /* Persistence.swift */; };
 		F1E376E6262B629D00F53C9F /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F1E376E4262B629D00F53C9F /* Model.xcdatamodeld */; };
+		F1E376E9262B683200F53C9F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1E376E8262B683200F53C9F /* ViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +49,7 @@
 		AFD45C2C257B221C000DEE85 /* ColorManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorManager.swift; sourceTree = "<group>"; };
 		F1E376E1262B5FEC00F53C9F /* Persistence.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		F1E376E5262B629D00F53C9F /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		F1E376E8262B683200F53C9F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +94,7 @@
 				1B68C2012576DFB8005FE3F3 /* Info.plist */,
 				1B68C1FE2576DFB8005FE3F3 /* Preview Content */,
 				F1E376E4262B629D00F53C9F /* Model.xcdatamodeld */,
+				F1E376E8262B683200F53C9F /* ViewController.swift */,
 			);
 			path = ListenUp;
 			sourceTree = "<group>";
@@ -211,6 +214,7 @@
 				AF436640257D705900F38389 /* FourView.swift in Sources */,
 				AF436696257ED7B400F38389 /* OneView.swift in Sources */,
 				AF436643257D709D00F38389 /* HostingTabBar.swift in Sources */,
+				F1E376E9262B683200F53C9F /* ViewController.swift in Sources */,
 				1B68C1F92576DFB5005FE3F3 /* ListenUpApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
