@@ -8,6 +8,7 @@
 import SwiftUI
 import CoreData
 
+
 @main
 struct ListenUpApp: App {
     let persistenceController = PersistenceController.shared
@@ -40,7 +41,18 @@ func getCoreDataDBPath() {
         print("Core Data DB Path :: \(path ?? "Not found")")
     }
 
+
+public var loggedInUser = "none";
 class AppDelegate: NSObject, UIApplicationDelegate {
+   
+
+    func getUser() -> String {
+        return loggedInUser
+    }
+
+    func setUser(user: String) {
+        loggedInUser = user
+    }
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
         print("Your code here")

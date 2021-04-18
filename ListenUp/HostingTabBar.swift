@@ -7,7 +7,10 @@
 
 import SwiftUI
 
+
+
 struct HostingTabBar: View {
+    @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
     /*
     private enum Tab: Hashable {
             case one
@@ -18,16 +21,16 @@ struct HostingTabBar: View {
     //@State private var selectedTab: Tab = .one
     @State private var selection = 0
     
-    
     var body: some View {
+
         //NavigationView{
-        TabView(selection: $selection) {
+        TabView(selection: $selection ) {
            OneView()
             .tag(0)
             .tabItem {
                Image(systemName: "flame.fill").font(.title)
 
-          }
+            }
           TwoView()
             .tag(1)
             .tabItem {
@@ -49,19 +52,28 @@ struct HostingTabBar: View {
                  Image(systemName: "person.crop.circle.fill").font(.title)
             }
 
-        }//.tabViewStyle(PageTabViewStyle()) //end of tab view
+        } //.tabViewStyle(PageTabViewStyle()) //end of tab view
        // .navigationBarHidden(true)
-       // }//end of nav view
+
+       }//end of body
+
+    init() {
+      // let appDelegate = UIApplication.shared.delegate as! AppDelegate
+       let u = appDelegate.getUser()
+        print("user {}", u)
     }
 }
 
 
 
 struct HostingTabBar_Previews: PreviewProvider {
+    
+    
     static var previews: some View {
         HostingTabBar()
-   
+
         ContentView().environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
             }
+
 }
 

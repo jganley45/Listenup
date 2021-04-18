@@ -430,7 +430,7 @@ func validateUser(user: User, name: String, password: String) -> Bool {
 
 
 struct ContentView: View {
-    
+    @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
     @Environment(\.managedObjectContext) private var viewContext
 
     @FetchRequest(entity: User.entity(), sortDescriptors: [])
@@ -449,7 +449,8 @@ struct ContentView: View {
     
    
     var body:   some View {
-
+       
+        
         ZStack{
             LinearGradient(gradient: Gradient(colors: [.top, .bottom]), startPoint: .top, endPoint: .bottom)
                 .edgesIgnoringSafeArea(.all)
@@ -477,6 +478,8 @@ struct ContentView: View {
 
                         self.authenticationDidSucceed = true
                         self.authenticationDidFail = false
+                        appDelegate.setUser(user:self.username)
+                        break
                     }else {
                         print("JG5")
                         self.authenticationDidFail = true
