@@ -16,9 +16,6 @@
 		AF436640257D705900F38389 /* FourView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF43663F257D705900F38389 /* FourView.swift */; };
 		AF436643257D709D00F38389 /* HostingTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF436642257D709D00F38389 /* HostingTabBar.swift */; };
 		AF436696257ED7B400F38389 /* OneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF436695257ED7B400F38389 /* OneView.swift */; };
-		AF43669F257FD2F100F38389 /* AriView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF43669E257FD2F100F38389 /* AriView.swift */; };
-		AF4366A3257FD31100F38389 /* KimView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF4366A2257FD31100F38389 /* KimView.swift */; };
-		AF4366A6257FD32C00F38389 /* JojiView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF4366A5257FD32C00F38389 /* JojiView.swift */; };
 		AF4366A9257FDEDB00F38389 /* HomeScreenButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF4366A8257FDEDB00F38389 /* HomeScreenButtons.swift */; };
 		AF4366AC257FF9F700F38389 /* FiveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF4366AB257FF9F700F38389 /* FiveView.swift */; };
 		AFD45C2A257B20CC000DEE85 /* colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AFD45C29257B20CC000DEE85 /* colors.xcassets */; };
@@ -41,9 +38,6 @@
 		AF43663F257D705900F38389 /* FourView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FourView.swift; sourceTree = "<group>"; };
 		AF436642257D709D00F38389 /* HostingTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HostingTabBar.swift; sourceTree = "<group>"; };
 		AF436695257ED7B400F38389 /* OneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneView.swift; sourceTree = "<group>"; };
-		AF43669E257FD2F100F38389 /* AriView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AriView.swift; sourceTree = "<group>"; };
-		AF4366A2257FD31100F38389 /* KimView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KimView.swift; sourceTree = "<group>"; };
-		AF4366A5257FD32C00F38389 /* JojiView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JojiView.swift; sourceTree = "<group>"; };
 		AF4366A8257FDEDB00F38389 /* HomeScreenButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenButtons.swift; sourceTree = "<group>"; };
 		AF4366AB257FF9F700F38389 /* FiveView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiveView.swift; sourceTree = "<group>"; };
 		AFD45C29257B20CC000DEE85 /* colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = colors.xcassets; sourceTree = "<group>"; };
@@ -125,9 +119,6 @@
 		AF43669D257FD2D200F38389 /* ArtistView */ = {
 			isa = PBXGroup;
 			children = (
-				AF43669E257FD2F100F38389 /* AriView.swift */,
-				AF4366A2257FD31100F38389 /* KimView.swift */,
-				AF4366A5257FD32C00F38389 /* JojiView.swift */,
 				F1E376EB262C820D00F53C9F /* BlankArtistView.swift */,
 			);
 			path = ArtistView;
@@ -210,10 +201,7 @@
 				F1E376E2262B5FED00F53C9F /* Persistence.swift in Sources */,
 				AF43663D257D703F00F38389 /* ThreeView.swift in Sources */,
 				1B68C1FB2576DFB5005FE3F3 /* ContentView.swift in Sources */,
-				AF4366A3257FD31100F38389 /* KimView.swift in Sources */,
-				AF4366A6257FD32C00F38389 /* JojiView.swift in Sources */,
 				F1E376EC262C820D00F53C9F /* BlankArtistView.swift in Sources */,
-				AF43669F257FD2F100F38389 /* AriView.swift in Sources */,
 				AF4366AC257FF9F700F38389 /* FiveView.swift in Sources */,
 				AF436640257D705900F38389 /* FourView.swift in Sources */,
 				AF436696257ED7B400F38389 /* OneView.swift in Sources */,

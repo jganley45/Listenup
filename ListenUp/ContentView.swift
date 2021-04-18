@@ -176,10 +176,13 @@ struct Capsule9: View {
 
 
 struct InstaCapsule: View {
+    var artistLink: String
     var body: some View {
         //let name = Text("Billie Eilish")
         VStack {
-            Image("insta")
+            Link(destination: URL(string: "https://" + artistLink)!) {
+                Image("insta")
+            }
 //                .clipShape(Capsule())
 //                .foregroundColor(.white)
 //                .shadow(color: .black, radius: 2)
@@ -193,10 +196,13 @@ struct InstaCapsule: View {
 }
 
 struct TwitterCapsule: View {
+    var artistLink: String
     var body: some View {
         //let name = Text("Billie Eilish")
         VStack {
-            Image("twitter")
+            Link(destination: URL(string: "https://" + artistLink)!) {
+                Image("twitter")
+            }
              
 
         }
@@ -204,10 +210,13 @@ struct TwitterCapsule: View {
 }
 
 struct YouTubeCapsule: View {
+    var artistLink: String
     var body: some View {
         //let name = Text("Billie Eilish")
         VStack {
-            Image("youtube")
+            Link(destination: URL(string: "https://" + artistLink)!) {
+                Image("youtube")
+            }
                
                 
         }
@@ -282,7 +291,7 @@ struct SecondView: View {
     
     var body: some View {
         Button(action: {
-            print("b3 tapped")
+            print("b1 tapped")
         }) {KimPhoto()}
         ZStack {
             LinearGradient(gradient: Gradient(colors: [.top, .bottom]), startPoint: .top, endPoint: .bottom)
@@ -290,16 +299,16 @@ struct SecondView: View {
             VStack{
                 HStack(spacing: 35) {
                     Button(action: {
-                        print("b3 tapped")
-                    }) {InstaCapsule()}
+                        print("b2 tapped")
+                    }) {InstaCapsule(artistLink: "")}
                    
                     Button(action: {
-                        print("b3 tapped")
-                    }) {TwitterCapsule()}
+                        print("b6 tapped")
+                    }) {TwitterCapsule(artistLink: "")}
                         
                     Button(action: {
-                        print("b3 tapped")
-                    }) {YouTubeCapsule()}
+                        print("b4 tapped")
+                    }) {YouTubeCapsule(artistLink: "")}
                 }
                 Button("Dismiss") {
                     self.presentationMode.wrappedValue.dismiss()
@@ -364,16 +373,16 @@ struct ThirdView: View {
               
                 HStack(spacing: 35) {
                     Button(action: {
-                        print("b3 tapped")
-                    }) {InstaCapsule()}
+                        print("bc1 tapped")
+                    }) {InstaCapsule(artistLink:"")}
                    
                     Button(action: {
-                        print("b3 tapped")
-                    }) {TwitterCapsule()}
+                        print("bc2 tapped")
+                    }) {TwitterCapsule(artistLink:"")}
                         
                     Button(action: {
-                        print("b3 tapped")
-                    }) {YouTubeCapsule()}
+                        print("bc3 tapped")
+                    }) {YouTubeCapsule(artistLink:"")}
                 }
                 Button("Dismiss") {
                     self.presentationMode.wrappedValue.dismiss()

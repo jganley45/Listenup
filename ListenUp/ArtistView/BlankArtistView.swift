@@ -16,7 +16,7 @@ struct BlankArtistView: View {
                         .edgesIgnoringSafeArea(.all)
                     VStack {
                             VStack {
-                                Image(artist.image!)
+                                Image(artist.name!)
                                         .clipShape(Circle())
                                         .overlay(Circle().stroke(Color.black, lineWidth: 1))
                                 Text(artist.name!)
@@ -28,16 +28,16 @@ struct BlankArtistView: View {
                             VStack{
                                 HStack(spacing: 35) {
                                     Button(action: {
-                                        print("b3 tapped")
-                                    }) {InstaCapsule()}
+                                        print("bb1 tapped")
+                                    }) {InstaCapsule(artistLink:artist.insta!)}
                                    
                                     Button(action: {
-                                        print("b3 tapped")
-                                    }) {TwitterCapsule()}
+                                        print("bb2 tapped")
+                                    }) {TwitterCapsule(artistLink:artist.twitter!)}
                                         
                                     Button(action: {
-                                        print("b3 tapped")
-                                    }) {YouTubeCapsule()}
+                                        print("bb3 tapped")
+                                    }) {YouTubeCapsule(artistLink:artist.youtube!)}
                                     }
                                 }
                                 .navigationBarHidden(true)

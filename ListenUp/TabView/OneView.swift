@@ -31,25 +31,25 @@ struct OneView: View {
                         HStack(spacing: 10) {
                             //List {
                             //    ForEach(artists) { artist in
-                            VStack {
-                                NavigationLink(destination: AriView()) {
-                                   Capsule1H()
-                                }.buttonStyle(PlainButtonStyle())
-                            }
+//                            VStack {
+//                                NavigationLink(destination: AriView()) {
+//                                   Capsule1H()
+//                                }.buttonStyle(PlainButtonStyle())
+//                            }
                             
-                            VStack {
-                                NavigationLink(destination: KimView()) {
-                                   Capsule2H()
-                                }.buttonStyle(PlainButtonStyle())
-                            }
+//                            VStack {
+//                                NavigationLink(destination: KimView()) {
+//                                   Capsule2H()
+//                                }.buttonStyle(PlainButtonStyle())
+//                            }
                             
-                            VStack {
-                                VStack {
-                                    NavigationLink(destination: JojiView()) {
-                                       Capsule3H()
-                                    }.buttonStyle(PlainButtonStyle())
-                                }
-                        }
+//                            VStack {
+//                                VStack {
+//                                    NavigationLink(destination: JojiView()) {
+//                                       Capsule3H()
+//                                    }.buttonStyle(PlainButtonStyle())
+//                                }
+//                        }
                               //  }//end of foreach
                            // }//end of list
                             VStack {
@@ -63,7 +63,7 @@ struct OneView: View {
                             
                             VStack {
                                 Button(action:  {
-                                    print("b2 tapped")
+                                    print("b12 tapped")
                                 }) {
                                     Capsule5H()
                                     }
@@ -72,7 +72,7 @@ struct OneView: View {
                             VStack {
                                 
                                 Button(action:  {
-                                    print("b3 tapped")
+                                    print("b13 tapped")
                                 }) {
                                     Capsule6H()
                                     }
@@ -86,7 +86,7 @@ struct OneView: View {
                                 }
                             VStack {
                                 Button(action:  {
-                                    print("b2 tapped")
+                                    print("b14 tapped")
                                 }) {
                                     Capsule8H()
                                     }
@@ -94,7 +94,7 @@ struct OneView: View {
                             VStack {
                                 
                                 Button(action:  {
-                                    print("b3 tapped")
+                                    print("b15 tapped")
                                 }) {
                                     Capsule9H()
                                     }
@@ -120,26 +120,26 @@ struct OneView: View {
                         }.buttonStyle(PlainButtonStyle())
                     }
                     
-                    VStack {
-                        NavigationLink(destination: AriView()) {
-                           Positions()
-                        }.buttonStyle(PlainButtonStyle())
-                    }
-                    
-                    VStack {
-                        VStack {
-                            NavigationLink(destination: JojiView()) {
-                               Weekend()
-                            }.buttonStyle(PlainButtonStyle())
-                        }
-                }
-                    VStack {
-                        VStack {
-                            NavigationLink(destination: JojiView()) {
-                               Mariah()
-                            }.buttonStyle(PlainButtonStyle())
-                        }
-                }
+//                    VStack {
+//                        NavigationLink(destination: AriView()) {
+//                           Positions()
+//                        }.buttonStyle(PlainButtonStyle())
+//                    }
+//                    
+//                    VStack {
+//                        VStack {
+//                            NavigationLink(destination: JojiView()) {
+//                               Weekend()
+//                            }.buttonStyle(PlainButtonStyle())
+//                        }
+//                }
+//                    VStack {
+//                        VStack {
+//                            NavigationLink(destination: JojiView()) {
+//                               Mariah()
+//                            }.buttonStyle(PlainButtonStyle())
+//                        }
+//                }
 
                 }.padding()//end of hstack
                 
