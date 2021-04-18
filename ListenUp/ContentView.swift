@@ -497,7 +497,7 @@ struct ContentView: View {
             if authenticationDidSucceed {
 
                //HostingTabBar()
-                TwoView(userid: appDelegate.getUserId())
+                TwoView(username: appDelegate.getUser())
                 //OneView()
                         }
         

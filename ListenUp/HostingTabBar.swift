@@ -38,7 +38,7 @@ struct HostingTabBar: View {
                Image(systemName: "flame.fill").font(.title)
 
             }
-            TwoView(userid: 0)
+            TwoView(username: "")
             .tag(1)
             .tabItem {
                Image(systemName: "heart.fill").font(.title)

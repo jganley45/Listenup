@@ -9,7 +9,7 @@ import SwiftUI
 import CoreData
 
 struct TwoView: View {
-    var userid: Int
+    var username: String
     //print("self.userId{}", self.userid)
     @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
     @Environment(\.managedObjectContext) private var viewContext
@@ -43,7 +43,7 @@ struct TwoView: View {
                                // print("self.userId{}", self.userid)
                                // print("artist.userId{}", artist.userid)
                                 //to do fix
-                                if artist.userid == self.userid {
+                                if artist.username == self.username {
                                     VStack {
                                         NavigationLink(destination: BlankArtistView(artist: artist)) {
                                             Image(artist.name!)
