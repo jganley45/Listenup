@@ -11,6 +11,13 @@ import SwiftUI
 
 struct HostingTabBar: View {
     @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
+    @Environment(\.managedObjectContext) private var viewContext
+   @FetchRequest(entity: Artist.entity(), sortDescriptors: [])
+    var artists: FetchedResults<Artist>
+   
+    
+    
+    
     /*
     private enum Tab: Hashable {
             case one
@@ -31,7 +38,7 @@ struct HostingTabBar: View {
                Image(systemName: "flame.fill").font(.title)
 
             }
-          TwoView()
+            TwoView(userid: 0)
             .tag(1)
             .tabItem {
                Image(systemName: "heart.fill").font(.title)
@@ -61,6 +68,9 @@ struct HostingTabBar: View {
       // let appDelegate = UIApplication.shared.delegate as! AppDelegate
        let u = appDelegate.getUser()
         print("user {}", u)
+        for artist in artists {
+            print(artist)
+        }
     }
 }
 

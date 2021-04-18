@@ -478,7 +478,8 @@ struct ContentView: View {
 
                         self.authenticationDidSucceed = true
                         self.authenticationDidFail = false
-                        appDelegate.setUser(user:self.username)
+                        appDelegate.setUser(user:user.name!)
+                        appDelegate.setUserId(id: Int(bitPattern: user.id))
                         break
                     }else {
                         print("JG5")
@@ -495,7 +496,8 @@ struct ContentView: View {
         //end of vstack
             if authenticationDidSucceed {
 
-               HostingTabBar()
+               //HostingTabBar()
+                TwoView(userid: appDelegate.getUserId())
                 //OneView()
                         }
         

@@ -26,6 +26,7 @@
 		F1E376E2262B5FED00F53C9F /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1E376E1262B5FEC00F53C9F /* Persistence.swift */; };
 		F1E376E6262B629D00F53C9F /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F1E376E4262B629D00F53C9F /* Model.xcdatamodeld */; };
 		F1E376E9262B683200F53C9F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1E376E8262B683200F53C9F /* ViewController.swift */; };
+		F1E376EC262C820D00F53C9F /* BlankArtistView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1E376EB262C820D00F53C9F /* BlankArtistView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +51,7 @@
 		F1E376E1262B5FEC00F53C9F /* Persistence.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		F1E376E5262B629D00F53C9F /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		F1E376E8262B683200F53C9F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		F1E376EB262C820D00F53C9F /* BlankArtistView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlankArtistView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,6 +128,7 @@
 				AF43669E257FD2F100F38389 /* AriView.swift */,
 				AF4366A2257FD31100F38389 /* KimView.swift */,
 				AF4366A5257FD32C00F38389 /* JojiView.swift */,
+				F1E376EB262C820D00F53C9F /* BlankArtistView.swift */,
 			);
 			path = ArtistView;
 			sourceTree = "<group>";
@@ -209,6 +212,7 @@
 				1B68C1FB2576DFB5005FE3F3 /* ContentView.swift in Sources */,
 				AF4366A3257FD31100F38389 /* KimView.swift in Sources */,
 				AF4366A6257FD32C00F38389 /* JojiView.swift in Sources */,
+				F1E376EC262C820D00F53C9F /* BlankArtistView.swift in Sources */,
 				AF43669F257FD2F100F38389 /* AriView.swift in Sources */,
 				AF4366AC257FF9F700F38389 /* FiveView.swift in Sources */,
 				AF436640257D705900F38389 /* FourView.swift in Sources */,

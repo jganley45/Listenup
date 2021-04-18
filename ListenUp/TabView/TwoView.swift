@@ -6,8 +6,15 @@
 //
 
 import SwiftUI
+import CoreData
 
 struct TwoView: View {
+    var userid: Int
+    //print("self.userId{}", self.userid)
+    @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
+    @Environment(\.managedObjectContext) private var viewContext
+   @FetchRequest(entity: Artist.entity(), sortDescriptors: [])
+    var artists: FetchedResults<Artist>
     @State private var showingSheet = false
     @State private var showingAddExpense = false
     
@@ -31,87 +38,100 @@ struct TwoView: View {
                     VStack(spacing: 20) {
                         Spacer()
                         HStack(spacing: 35) {
+                            List {
+                              ForEach(artists) { artist in
+                               // print("self.userId{}", self.userid)
+                               // print("artist.userId{}", artist.userid)
+                                //to do fix
+                                if artist.userid == self.userid {
+                                    VStack {
+                                        NavigationLink(destination: BlankArtistView(artist: artist)) {
+                                            Image(artist.name!)
+                                                .clipShape(Capsule())
+                                                .foregroundColor(.white)
+                                                .shadow(color: .black, radius: 2)
+                                                .shadow(color: .black, radius: 10)
+                                                
+                                        }.buttonStyle(PlainButtonStyle())
+                                    }
+                              }
                             
-                            VStack {
-                                NavigationLink(destination: AriView()) {
-                                   Capsule1()
-                                }.buttonStyle(PlainButtonStyle())
-                            }
+//                            VStack {
+//                                NavigationLink(destination: KimView()) {
+//                                   Capsule2()
+//                                }.buttonStyle(PlainButtonStyle())
+//                            }
                             
-                            VStack {
-                                NavigationLink(destination: KimView()) {
-                                   Capsule2()
-                                }.buttonStyle(PlainButtonStyle())
-                            }
-                            
-                            VStack {
-                                VStack {
-                                    NavigationLink(destination: JojiView()) {
-                                       Capsule3()
-                                    }.buttonStyle(PlainButtonStyle())
-                                }
-                        }
+//                            VStack {
+//                                VStack {
+//                                    NavigationLink(destination: JojiView()) {
+//                                       Capsule3()
+//                                    }.buttonStyle(PlainButtonStyle())
+//                                }
+//                        }
+                        }//end of for each
+                            } // end of list
                         }
                         
                         Spacer()
                             .frame(minHeight: 0, maxHeight: 25)
                         
                         
-                        HStack(spacing: 35) {
-                            VStack {
-                                Button(action: {
-                                        self.showingSheet.toggle()
-                                }) {Capsule4()}
-                                .sheet(isPresented: $showingSheet) {
-                                        ThirdView()
-                                }
-                            }
-                            
-                            VStack {
-                                Button(action:  {
-                                    print("b2 tapped")
-                                }) {
-                                    Capsule5()
-                                    }
-                                }
-                            
-                            VStack {
-                                
-                                Button(action:  {
-                                    print("b3 tapped")
-                                }) {
-                                    Capsule6()
-                                    }
-                                }
-                            }
+//                        HStack(spacing: 35) {
+//                            VStack {
+//                                Button(action: {
+//                                        self.showingSheet.toggle()
+//                                }) {Capsule4()}
+//                                .sheet(isPresented: $showingSheet) {
+//                                        ThirdView()
+//                                }
+//                            }
+//
+//                            VStack {
+//                                Button(action:  {
+//                                    print("b2 tapped")
+//                                }) {
+//                                    Capsule5()
+//                                    }
+//                                }
+//
+//                            VStack {
+//
+//                                Button(action:  {
+//                                    print("b3 tapped")
+//                                }) {
+//                                    Capsule6()
+//                                    }
+//                                }
+//                            }
                         
-                        Spacer()
-                            .frame(minHeight: 0, maxHeight: 25)
-                        HStack(spacing: 35) {
-                            VStack {
-                                Button(action:  {
-                                    print("Ariana Grande")
-                                }) {
-                                    Capsule7()
-                                }
-                                }
-                            VStack {
-                                Button(action:  {
-                                    print("b2 tapped")
-                                }) {
-                                    Capsule8()
-                                    }
-                                }
-                            VStack {
-                                
-                                Button(action:  {
-                                    print("b3 tapped")
-                                }) {
-                                    Capsule9()
-                                    }
-                                }
-                            }
-                        Spacer();
+//                        Spacer()
+//                            .frame(minHeight: 0, maxHeight: 25)
+//                        HStack(spacing: 35) {
+//                            VStack {
+//                                Button(action:  {
+//                                    print("Ariana Grande")
+//                                }) {
+//                                    Capsule7()
+//                                }
+//                                }
+//                            VStack {
+//                                Button(action:  {
+//                                    print("b2 tapped")
+//                                }) {
+//                                    Capsule8()
+//                                    }
+//                                }
+//                            VStack {
+//
+//                                Button(action:  {
+//                                    print("b3 tapped")
+//                                }) {
+//                                    Capsule9()
+//                                    }
+//                                }
+//                            }
+//                        Spacer();
                     }
                 }
                 .navigationBarHidden(true)
@@ -121,8 +141,8 @@ struct TwoView: View {
 }
 
 
-struct TwoView_Previews: PreviewProvider {
-    static var previews: some View {
-        TwoView()
-    }
-}
+//struct TwoView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        TwoView().environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
+//    }
+//}

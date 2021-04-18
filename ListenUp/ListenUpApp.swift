@@ -43,9 +43,18 @@ func getCoreDataDBPath() {
 
 
 public var loggedInUser = "none";
+public var loggedInId = 0;
 class AppDelegate: NSObject, UIApplicationDelegate {
    
+    
+    func getUserId() -> Int {
+        return loggedInId
+    }
 
+    func setUserId(id: Int) {
+        loggedInId = id
+    }
+    
     func getUser() -> String {
         return loggedInUser
     }

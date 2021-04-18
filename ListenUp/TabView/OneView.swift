@@ -8,8 +8,15 @@
 import SwiftUI
 
 struct OneView: View {
+    @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
+    @Environment(\.managedObjectContext) private var viewContext
+   @FetchRequest(entity: Artist.entity(), sortDescriptors: [])
+    var artists: FetchedResults<Artist>
+    
     @State private var showingSheet = false
     var body: some View {
+        
+        
        
         NavigationView{
         ZStack{
@@ -22,7 +29,8 @@ struct OneView: View {
                     ScrollView(.horizontal) {
                         
                         HStack(spacing: 10) {
-                            
+                            //List {
+                            //    ForEach(artists) { artist in
                             VStack {
                                 NavigationLink(destination: AriView()) {
                                    Capsule1H()
@@ -42,6 +50,8 @@ struct OneView: View {
                                     }.buttonStyle(PlainButtonStyle())
                                 }
                         }
+                              //  }//end of foreach
+                           // }//end of list
                             VStack {
                                 Button(action: {
                                         self.showingSheet.toggle()
@@ -191,6 +201,7 @@ struct OneView: View {
 
 struct OneView_Previews: PreviewProvider {
     static var previews: some View {
-        OneView()
+        //OneView()
+        OneView().environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
     }
 }
