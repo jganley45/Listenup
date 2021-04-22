@@ -1,0 +1,52 @@
+-> A short report, describing the problem the project attempts to solve, its goals, alternative approaches to solving the problem, the chosen approach, and a    justification for choosing it over other approaches (as appropriate for your case) *
+
+This project presented a lot of problems to us.  Last semester, we just focused on the UI aspect.  Little did we know that implementing a database into that prebuilt UI would be a tough thing to do.  The problem that this app aimed to solve was give users music notifications for song releases.  Alternate approaches consist of other apps like Apple music or Spotify, but this app approaches to solve this problem by allowing users to pick the exact artists they want to get notifications from.   
+
+
+
+
+
+->Detailed, step-by-step, build/installation/initialization/launch instructions *
+
+- download/open Xcode
+- then open the xcode file of the project listed in the repository
+- once you have openened the file build the application and click the play button in the top right side
+- should open the iPhone simulator
+- wait for the app to open
+- login with the details
+
+username: JG
+password: foo
+
+or
+
+username: JJ
+password: 1
+
+
+
+
+
+
+->Detailed instructions how to use the software (if you are convinced it is self-explanatory and does not need instructions feel free to select "3") *
+
+You will ideally need Xcode to run the project. There is a Xcode file in the repository, opening it should open a window and when you see all the files, you will want to click the play button in the top right hand corner. This shoudl open the iPhone simulator and once it opens the app you can use the credentials 
+
+username: JG
+password: foo
+
+or
+
+username: JJ
+password: 1
+
+These are two diffferent users and you should notice differenrt information within the app when switching the accounts. 
+
+
+
+
+
+
+->All materials, including (as applicable) source codes, images, icons, header files, libraries, databases *
+
+All materials including source codes, images, icons, header files are in the project folder. But unfortunately we cannot provide accurate databases as we had to manually code the data in and it was a lengthy process. It works just fine on our computers and runs smoothly, however, if you were to download our project it wouldn't run as you'd be missing the data. We can submit a video to show the work we have done and show how it functions, but unless we run you through the meticulous process of inserting the data on your computer as well the program won't run like it's intended to.
