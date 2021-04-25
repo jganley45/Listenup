@@ -6,8 +6,13 @@
 //
 
 import SwiftUI
-struct BlankArtistView: View {
+import CoreData
+
+struct SingleArtistView: View {
     var artist: Artist
+    @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
+    @Environment(\.managedObjectContext) private var viewContext
+    
     var body: some View {
             NavigationView {
  
@@ -42,11 +47,112 @@ struct BlankArtistView: View {
                                     }
                                 }
                                 .navigationBarHidden(true)
+                        VStack{
+                            Button(action: {
+                                saveObj(ad: appDelegate)
+                                
+                                
+                            })
+                            {
+                                SaveButtonContent()
+                            }
+                        }
                     }
-                }
+                } // end ZStack
             }
         }
+}
+
+// Helper func for getting the current context.
+    private func getContext(ad: AppDelegate) -> NSManagedObjectContext? {
+        return ad.persistentContainer.viewContext
     }
+
+func retrieveUser(ad: AppDelegate , username:String) -> NSManagedObject? {
+    print("here in retrieveUser")
+    guard let managedContext = getContext(ad: ad) else { return nil }
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "User")
+        
+        do {
+            let result = try managedContext.fetch(fetchRequest) as! [NSManagedObject]
+            if result.count > 0 {
+                // Assuming there will only ever be one User in the app.
+                var i = 0
+                while (i < result.count) {
+                    let user = result[i]
+                    print("u{} nm{}: pwd{}: phone:{}", i, user.value(forKey: "name"), user.value(forKey: "password"), user.value(forKey: "phone"))
+                    if (user.value(forKey: "name")! as! String == username ) {
+                      return result[i]
+                    }
+  
+                    i += 1
+                }
+                return nil
+            } else {
+                return nil
+            }
+        } catch let error as NSError {
+            print("Retrieving user failed. \(error): \(error.userInfo)")
+           return nil
+        }
+}
+    
+    //** find matching user
+    
+
+
+func saveObj(ad: AppDelegate) {
+    
+    print("here in saveObj")
+    guard let user = retrieveUser(ad: ad, username: ad.getUser()) else { return }
+    guard let managedContext =  getContext(ad: ad) else { return }
+    user.setValue("666", forKey: "phone")
+    
+    do {
+        print("Saving user...")
+        try managedContext.save()
+    } catch let error as NSError {
+        print("Failed to save user data! \(error): \(error.userInfo)")
+    }
+
+}
+
+//struct SingleNavigationConfigurator: UIViewControllerRepresentable {
+//    typealias UIViewControllerType =
+//
+//
+//
+//    var configure: (UINavigationController) -> Void = { _ in }
+//
+//
+//
+//    func makeUIViewController(context: UIViewControllerRepresentableContext<SingleNavigationConfigurator>) -> UIViewController {
+//        print("FourView START")
+//        return UIViewController()
+//    }
+//
+//    func updateUIViewController(_ uiViewController: UIViewController, context: UIViewControllerRepresentableContext<SingleNavigationConfigurator>) {
+//        if let nc = uiViewController.navigationController {
+//            self.configure(nc)
+//        }
+//        print("ForView Update")
+//    }
+//
+//}
+
+
+struct SaveButtonContent: View {
+    var body: some View {
+        Text("SAVE")
+            .font(.headline)
+            .fontWeight(.semibold)
+            .foregroundColor(.white)
+            .padding()
+            .frame(width: 220, height: 60)
+            .background(Color.categories)
+            .cornerRadius(15.0)
+    }
+}
 
 //struct BlankArtistView_Previews: PreviewProvider {
 //    static var previews: some View {

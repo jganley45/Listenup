@@ -11,9 +11,9 @@
 		1B68C1FB2576DFB5005FE3F3 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B68C1FA2576DFB5005FE3F3 /* LoginView.swift */; };
 		1B68C1FD2576DFB8005FE3F3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1B68C1FC2576DFB8005FE3F3 /* Assets.xcassets */; };
 		1B68C2002576DFB8005FE3F3 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1B68C1FF2576DFB8005FE3F3 /* Preview Assets.xcassets */; };
-		AF43663A257D703400F38389 /* UserArtistView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF436639257D703400F38389 /* UserArtistView.swift */; };
+		AF43663A257D703400F38389 /* MyArtistsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF436639257D703400F38389 /* MyArtistsView.swift */; };
 		AF43663D257D703F00F38389 /* ThreeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF43663C257D703F00F38389 /* ThreeView.swift */; };
-		AF436640257D705900F38389 /* FourView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF43663F257D705900F38389 /* FourView.swift */; };
+		AF436640257D705900F38389 /* AllArtists.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF43663F257D705900F38389 /* AllArtists.swift */; };
 		AF436643257D709D00F38389 /* HostingTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF436642257D709D00F38389 /* HostingTabBar.swift */; };
 		AF436696257ED7B400F38389 /* OneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF436695257ED7B400F38389 /* OneView.swift */; };
 		AF4366A9257FDEDB00F38389 /* HomeScreenButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF4366A8257FDEDB00F38389 /* HomeScreenButtons.swift */; };
@@ -23,7 +23,7 @@
 		F1E376E2262B5FED00F53C9F /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1E376E1262B5FEC00F53C9F /* Persistence.swift */; };
 		F1E376E6262B629D00F53C9F /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F1E376E4262B629D00F53C9F /* Model.xcdatamodeld */; };
 		F1E376E9262B683200F53C9F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1E376E8262B683200F53C9F /* ViewController.swift */; };
-		F1E376EC262C820D00F53C9F /* BlankArtistView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1E376EB262C820D00F53C9F /* BlankArtistView.swift */; };
+		F1E376EC262C820D00F53C9F /* SingleArtistView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1E376EB262C820D00F53C9F /* SingleArtistView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,9 +33,9 @@
 		1B68C1FC2576DFB8005FE3F3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1B68C1FF2576DFB8005FE3F3 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		1B68C2012576DFB8005FE3F3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		AF436639257D703400F38389 /* UserArtistView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserArtistView.swift; sourceTree = "<group>"; };
+		AF436639257D703400F38389 /* MyArtistsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyArtistsView.swift; sourceTree = "<group>"; };
 		AF43663C257D703F00F38389 /* ThreeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreeView.swift; sourceTree = "<group>"; };
-		AF43663F257D705900F38389 /* FourView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FourView.swift; sourceTree = "<group>"; };
+		AF43663F257D705900F38389 /* AllArtists.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllArtists.swift; sourceTree = "<group>"; };
 		AF436642257D709D00F38389 /* HostingTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HostingTabBar.swift; sourceTree = "<group>"; };
 		AF436695257ED7B400F38389 /* OneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneView.swift; sourceTree = "<group>"; };
 		AF4366A8257FDEDB00F38389 /* HomeScreenButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenButtons.swift; sourceTree = "<group>"; };
@@ -45,7 +45,7 @@
 		F1E376E1262B5FEC00F53C9F /* Persistence.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		F1E376E5262B629D00F53C9F /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		F1E376E8262B683200F53C9F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		F1E376EB262C820D00F53C9F /* BlankArtistView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlankArtistView.swift; sourceTree = "<group>"; };
+		F1E376EB262C820D00F53C9F /* SingleArtistView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleArtistView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,9 +107,9 @@
 			isa = PBXGroup;
 			children = (
 				AF436695257ED7B400F38389 /* OneView.swift */,
-				AF436639257D703400F38389 /* UserArtistView.swift */,
+				AF436639257D703400F38389 /* MyArtistsView.swift */,
 				AF43663C257D703F00F38389 /* ThreeView.swift */,
-				AF43663F257D705900F38389 /* FourView.swift */,
+				AF43663F257D705900F38389 /* AllArtists.swift */,
 				AF4366AB257FF9F700F38389 /* FiveView.swift */,
 				AF4366A8257FDEDB00F38389 /* HomeScreenButtons.swift */,
 			);
@@ -119,7 +119,7 @@
 		AF43669D257FD2D200F38389 /* ArtistView */ = {
 			isa = PBXGroup;
 			children = (
-				F1E376EB262C820D00F53C9F /* BlankArtistView.swift */,
+				F1E376EB262C820D00F53C9F /* SingleArtistView.swift */,
 			);
 			path = ArtistView;
 			sourceTree = "<group>";
@@ -195,15 +195,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				AFD45C2D257B221C000DEE85 /* ColorManager.swift in Sources */,
-				AF43663A257D703400F38389 /* UserArtistView.swift in Sources */,
+				AF43663A257D703400F38389 /* MyArtistsView.swift in Sources */,
 				F1E376E6262B629D00F53C9F /* Model.xcdatamodeld in Sources */,
 				AF4366A9257FDEDB00F38389 /* HomeScreenButtons.swift in Sources */,
 				F1E376E2262B5FED00F53C9F /* Persistence.swift in Sources */,
 				AF43663D257D703F00F38389 /* ThreeView.swift in Sources */,
 				1B68C1FB2576DFB5005FE3F3 /* LoginView.swift in Sources */,
-				F1E376EC262C820D00F53C9F /* BlankArtistView.swift in Sources */,
+				F1E376EC262C820D00F53C9F /* SingleArtistView.swift in Sources */,
 				AF4366AC257FF9F700F38389 /* FiveView.swift in Sources */,
-				AF436640257D705900F38389 /* FourView.swift in Sources */,
+				AF436640257D705900F38389 /* AllArtists.swift in Sources */,
 				AF436696257ED7B400F38389 /* OneView.swift in Sources */,
 				AF436643257D709D00F38389 /* HostingTabBar.swift in Sources */,
 				F1E376E9262B683200F53C9F /* ViewController.swift in Sources */,

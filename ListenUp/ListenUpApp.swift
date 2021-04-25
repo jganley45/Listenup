@@ -42,10 +42,11 @@ func getCoreDataDBPath() {
     }
 
 
+//public var loggedInUser:User
 public var loggedInUser = "none";
-public var loggedInId = 0;
+public var loggedInId = 0
 class AppDelegate: NSObject, UIApplicationDelegate {
-   
+        //var loggedInUser:User
     
     func getUserId() -> Int {
         return loggedInId
@@ -62,7 +63,7 @@ class AppDelegate: NSObject, UIApplicationDelegate {
     func setUser(user: String) {
         loggedInUser = user
     }
-    
+
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
         print("Your code here")
         getCoreDataDBPath()

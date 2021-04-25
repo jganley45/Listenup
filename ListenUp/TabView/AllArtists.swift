@@ -8,7 +8,8 @@
 import SwiftUI
 import CoreData
 
-struct FourView: View {
+struct AllArtists: View {
+   
     @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
     @Environment(\.managedObjectContext) private var viewContext
     @FetchRequest(entity: Artist.entity(), sortDescriptors: [])
@@ -28,7 +29,7 @@ struct FourView: View {
                             
                           ForEach(artists) { artist in
                                 VStack {
-                                    NavigationLink(destination: BlankArtistView(artist: artist)) {
+                                    NavigationLink(destination: SingleArtistView(artist: artist)) {
                                         Image(artist.name!)
                                             .clipShape(Capsule())
                                             .foregroundColor(.white)
@@ -43,7 +44,7 @@ struct FourView: View {
                     }.padding()
                     Divider()
                     Spacer()
-                }
+                } // end vstack
                 //HostingTabBar()
             }// end of zstack
             .navigationTitle("All Artists")
@@ -55,22 +56,36 @@ struct FourView: View {
     }
 }
 
-struct FourView_Previews: PreviewProvider {
-    static var previews: some View {
-        FourView()
-    }
-}
 
-struct NavigationConfigurator: UIViewControllerRepresentable {
+//struct FourView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        AllArtists()
+//    }
+//}
+
+struct SingleNavigationConfigurator: UIViewControllerRepresentable {
     var configure: (UINavigationController) -> Void = { _ in }
 
-    func makeUIViewController(context: UIViewControllerRepresentableContext<NavigationConfigurator>) -> UIViewController {
-        UIViewController()
+    
+//    func makeUIViewController(context: Context) -> UIPageViewController {
+//            let pageViewController = UIPageViewController(
+//                transitionStyle: .scroll,
+//                navigationOrientation: .horizontal)
+//
+//            print("JGJGJG")
+//            return pageViewController
+//        }
+    
+    func makeUIViewController(context: UIViewControllerRepresentableContext<SingleNavigationConfigurator>) -> UIViewController {
+        print("FourView START")
+        return UIViewController()
     }
-    func updateUIViewController(_ uiViewController: UIViewController, context: UIViewControllerRepresentableContext<NavigationConfigurator>) {
+    
+    func updateUIViewController(_ uiViewController: UIViewController, context: UIViewControllerRepresentableContext<SingleNavigationConfigurator>) {
         if let nc = uiViewController.navigationController {
             self.configure(nc)
         }
+        print("ForView Update")
     }
 
 }

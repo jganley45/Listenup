@@ -8,8 +8,8 @@
 import SwiftUI
 import CoreData
 
-struct UserArtistView: View {
-    var username: String
+struct MyArtistsView: View {
+
     //print("self.userId{}", self.userid)
     @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
     @Environment(\.managedObjectContext) private var viewContext
@@ -49,9 +49,9 @@ struct UserArtistView: View {
                                // print("self.userId{}", self.userid)
                                // print("artist.userId{}", artist.userid)
                                 //to do fix
-                                if artist.username == self.username {
+                                if artist.username == appDelegate.getUser() {
                                     VStack {
-                                        NavigationLink(destination: BlankArtistView(artist: artist)) {
+                                        NavigationLink(destination: SingleArtistView(artist: artist)) {
                                             Image(artist.name!)
                                                 .clipShape(Capsule())
                                                 .foregroundColor(.white)

@@ -10,6 +10,7 @@ import SwiftUI
 
 
 struct HostingTabBar: View {
+   
     @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
     @Environment(\.managedObjectContext) private var viewContext
    @FetchRequest(entity: Artist.entity(), sortDescriptors: [])
@@ -22,7 +23,7 @@ struct HostingTabBar: View {
         //NavigationView{
         TabView(selection: $selection ) {
             
-            UserArtistView(username: appDelegate.getUser())
+            MyArtistsView()
                 .tag(1)
                 .tabItem {
                    Image(systemName: "heart.fill").font(.title)
@@ -34,12 +35,12 @@ struct HostingTabBar: View {
 //            .tabItem {
 //               Image(systemName: "person.3.fill").font(.title)
 //          }
-                FourView()
+            AllArtists()
                   .tag(3)
                   .tabItem {
                      Image(systemName: "bell.fill").font(.title)
                 }
-          LoginView()
+            LoginView()
               .tag(4)
               .tabItem {
                  Image(systemName: "lock.fill").font(.title)
@@ -50,14 +51,14 @@ struct HostingTabBar: View {
 
        }//end of body
 
-    init() {
-      // let appDelegate = UIApplication.shared.delegate as! AppDelegate
-       let u = appDelegate.getUser()
-        print("user {}", u)
-        for artist in artists {
-            print(artist)
-        }
-    }
+//    init() {
+//      // let appDelegate = UIApplication.shared.delegate as! AppDelegate
+//       let u = appDelegate.getUser()
+//        print("user {}", u)
+//        for artist in artists {
+//            print(artist)
+//        }
+//    }
 }
 
 
