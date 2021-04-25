@@ -18,8 +18,13 @@
             <entry key="password" value="foo"/>
         </userInfo>
     </entity>
+    <entity name="UserArtistLink" representedClassName="UserArtistLink" syncable="YES" codeGenerationType="class">
+        <attribute name="artist" optional="YES" attributeType="String"/>
+        <attribute name="username" optional="YES" attributeType="String"/>
+    </entity>
     <elements>
-        <element name="Artist" positionX="-54" positionY="0" width="128" height="148"/>
+        <element name="Artist" positionX="-54" positionY="0" width="128" height="134"/>
         <element name="User" positionX="-63" positionY="-18" width="128" height="74"/>
+        <element name="UserArtistLink" positionX="-54" positionY="45" width="128" height="59"/>
     </elements>
 </model>

@@ -49,8 +49,8 @@ struct SingleArtistView: View {
                                 .navigationBarHidden(true)
                         VStack{
                             Button(action: {
-                                saveObj(ad: appDelegate)
-                                
+                                saveUalink(ad: appDelegate,
+                                           artistname:  artist.name!)
                                 
                             })
                             {
@@ -117,28 +117,66 @@ func saveObj(ad: AppDelegate) {
 
 }
 
-//struct SingleNavigationConfigurator: UIViewControllerRepresentable {
-//    typealias UIViewControllerType =
-//
-//
-//
-//    var configure: (UINavigationController) -> Void = { _ in }
-//
-//
-//
-//    func makeUIViewController(context: UIViewControllerRepresentableContext<SingleNavigationConfigurator>) -> UIViewController {
-//        print("FourView START")
-//        return UIViewController()
-//    }
-//
-//    func updateUIViewController(_ uiViewController: UIViewController, context: UIViewControllerRepresentableContext<SingleNavigationConfigurator>) {
-//        if let nc = uiViewController.navigationController {
-//            self.configure(nc)
-//        }
-//        print("ForView Update")
-//    }
-//
-//}
+
+
+func findUserArtistLink(ad: AppDelegate, username:String, artistname:String) -> NSManagedObject? {
+    print("here in findUserArtistLink")
+    guard let managedContext = getContext(ad: ad) else { return nil }
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "UserArtistLink")
+        
+        do {
+            let result = try managedContext.fetch(fetchRequest) as! [NSManagedObject]
+            if result.count > 0 {
+                // Assuming there will only ever be one User in the app.
+                var i = 0
+                while (i < result.count) {
+                    let userAlink = result[i]
+                    print("u{} nm:{} artist:{}", i, userAlink.value(forKey: "username"), userAlink.value(forKey: "artist"))
+                    if (userAlink.value(forKey: "username")! as! String == username &&
+                            userAlink.value(forKey: "artist")! as! String == artistname) {
+                      return result[i]
+                    }
+  
+                    i += 1
+                }
+                return nil
+            } else {
+                return nil
+            }
+        } catch let error as NSError {
+            print("Retrieving user failed. \(error): \(error.userInfo)")
+           return nil
+        }
+}
+
+func saveUalink(ad: AppDelegate, artistname:String) {
+    
+    print("here in saveUalink")
+    guard let userAlink = findUserArtistLink(ad: ad,
+                                        username: ad.getUser(),
+                                        artistname: artistname)
+    else {
+        guard let managedContext =  getContext(ad: ad) else {return }
+        let userArtistLink = NSEntityDescription.insertNewObject(forEntityName: "UserArtistLink", into: managedContext) as! UserArtistLink
+
+//        var userArtistLink: UserArtistLink = {
+//            NSEntityDescription.entity(forEntityName: "UserArtistLink", in: managedContext)!
+//            }()
+        userArtistLink.username = ad.getUser()
+        userArtistLink.artist = artistname
+        
+        do {
+            print("Saving userArtistLink...")
+            try managedContext.save()
+        } catch let error as NSError {
+            print("Failed to save userArtistLink data! \(error): \(error.userInfo)")
+        }
+     
+        return
+    }
+    // userAlink found, so dont add again
+    return
+}
 
 
 struct SaveButtonContent: View {

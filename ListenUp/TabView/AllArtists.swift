@@ -63,29 +63,29 @@ struct AllArtists: View {
 //    }
 //}
 
-struct SingleNavigationConfigurator: UIViewControllerRepresentable {
-    var configure: (UINavigationController) -> Void = { _ in }
-
-    
-//    func makeUIViewController(context: Context) -> UIPageViewController {
-//            let pageViewController = UIPageViewController(
-//                transitionStyle: .scroll,
-//                navigationOrientation: .horizontal)
+//struct SingleNavigationConfigurator: UIViewControllerRepresentable {
+//    var configure: (UINavigationController) -> Void = { _ in }
 //
-//            print("JGJGJG")
-//            return pageViewController
+//    
+////    func makeUIViewController(context: Context) -> UIPageViewController {
+////            let pageViewController = UIPageViewController(
+////                transitionStyle: .scroll,
+////                navigationOrientation: .horizontal)
+////
+////            print("JGJGJG")
+////            return pageViewController
+////        }
+//    
+//    func makeUIViewController(context: UIViewControllerRepresentableContext<SingleNavigationConfigurator>) -> UIViewController {
+//        print("FourView START")
+//        return UIViewController()
+//    }
+//    
+//    func updateUIViewController(_ uiViewController: UIViewController, context: UIViewControllerRepresentableContext<SingleNavigationConfigurator>) {
+//        if let nc = uiViewController.navigationController {
+//            self.configure(nc)
 //        }
-    
-    func makeUIViewController(context: UIViewControllerRepresentableContext<SingleNavigationConfigurator>) -> UIViewController {
-        print("FourView START")
-        return UIViewController()
-    }
-    
-    func updateUIViewController(_ uiViewController: UIViewController, context: UIViewControllerRepresentableContext<SingleNavigationConfigurator>) {
-        if let nc = uiViewController.navigationController {
-            self.configure(nc)
-        }
-        print("ForView Update")
-    }
-
-}
+//        print("ForView Update")
+//    }
+//
+//}
