@@ -21,23 +21,6 @@ struct UserArtistView: View {
         Binding<PresentationMode>
 
 
-      var btnBack : some View {
-        //VStack {
-            Button(action: {
-                self.presentationMode.wrappedValue.dismiss()
-          })
-            {
-                HStack {
-                Image("ic_back") // set image here
-                      .aspectRatio(contentMode: .fit)
-                      .foregroundColor(.white)
-                      Text("< Logout")
-              
-                //LoginView()
-                }
-            }
-      }
-    
     var body: some View {
         //Color.blue
         
@@ -91,7 +74,7 @@ struct UserArtistView: View {
                 .navigationBarHidden(false)
                 //.navigationBarBackButtonHidden(true)
                 //.navigationBarItems(leading: btnBack)
-            }
+            } // end of navView
         //}
     }
 }
