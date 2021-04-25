@@ -16,6 +16,7 @@ struct BlankArtistView: View {
                         .edgesIgnoringSafeArea(.all)
                     VStack {
                             VStack {
+                                
                                 Image(artist.name!)
                                         .clipShape(Circle())
                                         .overlay(Circle().stroke(Color.black, lineWidth: 1))
@@ -53,3 +54,74 @@ struct BlankArtistView: View {
 //            BlankArtistView()        }
 //    }
 //}
+
+struct InstaCapsule: View {
+    var artistLink: String
+    var body: some View {
+        //let name = Text("Billie Eilish")
+        VStack {
+            Link(destination: URL(string: "https://" + artistLink)!) {
+                Image("insta")
+            }
+//                .clipShape(Capsule())
+//                .foregroundColor(.white)
+//                .shadow(color: .black, radius: 2)
+//                .shadow(color: .black, radius: 10)
+
+//            name
+//               .foregroundColor(.white)
+//               .font(.system(size: 17, weight: .bold, design: .default))
+        }
+    }
+}
+
+struct TwitterCapsule: View {
+    var artistLink: String
+    var body: some View {
+        //let name = Text("Billie Eilish")
+        VStack {
+            Link(destination: URL(string: "https://" + artistLink)!) {
+                Image("twitter")
+            }
+             
+
+        }
+    }
+}
+
+struct YouTubeCapsule: View {
+    var artistLink: String
+    var body: some View {
+        //let name = Text("Billie Eilish")
+        VStack {
+            Link(destination: URL(string: "https://" + artistLink)!) {
+                Image("youtube")
+            }
+               
+                
+        }
+    }
+}
+
+struct KimPhoto: View {
+    var body: some View {
+        //let name = Text("Billie Eilish")
+        VStack {
+            Image("kim_profile")
+//                //.resizable()
+//                .scaledToFit()
+        }
+    }
+}
+
+struct NewRelease: View {
+    var body: some View {
+        //let name = Text("Billie Eilish")
+        VStack {
+            Image("new").resizable()
+                .frame(width: 375.0, height: 200.0)
+//                //.resizable()
+            //    .scaledToFit()
+        }
+    }
+}

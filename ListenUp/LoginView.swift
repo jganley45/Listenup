@@ -8,6 +8,7 @@
 import SwiftUI
 import CoreData
 
+/*
 struct Capsule1: View {
     
     var name: String = "ariana"
@@ -175,76 +176,6 @@ struct Capsule9: View {
 }
 
 
-struct InstaCapsule: View {
-    var artistLink: String
-    var body: some View {
-        //let name = Text("Billie Eilish")
-        VStack {
-            Link(destination: URL(string: "https://" + artistLink)!) {
-                Image("insta")
-            }
-//                .clipShape(Capsule())
-//                .foregroundColor(.white)
-//                .shadow(color: .black, radius: 2)
-//                .shadow(color: .black, radius: 10)
-
-//            name
-//               .foregroundColor(.white)
-//               .font(.system(size: 17, weight: .bold, design: .default))
-        }
-    }
-}
-
-struct TwitterCapsule: View {
-    var artistLink: String
-    var body: some View {
-        //let name = Text("Billie Eilish")
-        VStack {
-            Link(destination: URL(string: "https://" + artistLink)!) {
-                Image("twitter")
-            }
-             
-
-        }
-    }
-}
-
-struct YouTubeCapsule: View {
-    var artistLink: String
-    var body: some View {
-        //let name = Text("Billie Eilish")
-        VStack {
-            Link(destination: URL(string: "https://" + artistLink)!) {
-                Image("youtube")
-            }
-               
-                
-        }
-    }
-}
-
-struct KimPhoto: View {
-    var body: some View {
-        //let name = Text("Billie Eilish")
-        VStack {
-            Image("kim_profile")
-//                //.resizable()
-//                .scaledToFit()
-        }
-    }
-}
-
-struct NewRelease: View {
-    var body: some View {
-        //let name = Text("Billie Eilish")
-        VStack {
-            Image("new").resizable()
-                .frame(width: 375.0, height: 200.0)
-//                //.resizable()
-            //    .scaledToFit()
-        }
-    }
-}
 
 struct Positions: View {
     var body: some View {
@@ -325,76 +256,7 @@ struct SecondView: View {
     
 
 
-struct ThirdView: View {
-    @Environment(\.presentationMode) var presentationMode
-    @State var showDetails = false
-    
- 
-    
-    var body: some View {
-        
-//        List(modelData) { weather in
-//              HStack {
-//                  // 2.
-//                  Image(systemName: weather.image)
-//                      .frame(width: 50, height: 10, alignment: .leading)
-//                  Text("\(weather.temp)º")
-//                      .frame(width: 50, height: 10, alignment: .leading)
-//                  VStack {
-//                      Text(weather.city)
-//                  }
-//              }.font(.title)
-//          }
-       
-        
-           
-//            VStack {
-//                //background(Color.blue)
-//                Image("kim_profile")
-//                    //.clipShape(Circle())
-//                    .resizable()
-//                    .scaledToFit()
-//                    .foregroundColor(.black)
-//    //            Button(action: {
-//    //                print("b3 tapped")
-//    //        }) {KimPhoto()}
-//    //            .clipShape(Rectangle())
-//    //            .foregroundColor(.purple)
-//    //            .shadow(color: .black, radius: 2)
-//    //            .shadow(color: .black, radius: 10)
-//            }
 
-        ZStack {
-            LinearGradient(gradient: Gradient(colors: [.top, .bottom]), startPoint: .top, endPoint: .bottom)
-                .edgesIgnoringSafeArea(.all)
-           
-            //Spacer()
-            VStack{
-              
-                HStack(spacing: 35) {
-                    Button(action: {
-                        print("bc1 tapped")
-                    }) {InstaCapsule(artistLink:"")}
-                   
-                    Button(action: {
-                        print("bc2 tapped")
-                    }) {TwitterCapsule(artistLink:"")}
-                        
-                    Button(action: {
-                        print("bc3 tapped")
-                    }) {YouTubeCapsule(artistLink:"")}
-                }
-                Button("Dismiss") {
-                    self.presentationMode.wrappedValue.dismiss()
-                }
-            
-                }
-            }
-           
-
-    
-    }
-}
 
 struct FourthView: View {
     @Environment(\.presentationMode) var presentationMode
@@ -419,7 +281,7 @@ struct FourthView: View {
 //        }
     }
 }
-
+*/
 
 
 //let storedUsername = "JV"
@@ -438,7 +300,8 @@ func validateUser(user: User, name: String, password: String) -> Bool {
 
 
 
-struct ContentView: View {
+// Main
+struct LoginView: View {
     @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
     @Environment(\.managedObjectContext) private var viewContext
 
@@ -458,14 +321,15 @@ struct ContentView: View {
     
    
     var body:   some View {
-       
-        
+
         ZStack{
+            
             LinearGradient(gradient: Gradient(colors: [.top, .bottom]), startPoint: .top, endPoint: .bottom)
                 .edgesIgnoringSafeArea(.all)
             
         
         VStack{
+           
             WelcomeText()
             WelcomeImage()
             UsernameTextField(username: $username)
@@ -474,39 +338,34 @@ struct ContentView: View {
             if authenticationDidFail {
                             Text("Information not correct. Try again.")
                                 .offset(y: -10)
-                                .foregroundColor(.white)
-                        }
-            
+                                .foregroundColor(.white)    }
             Button(action: {
                 print("JG6 {} {}", self.username, self.password)
                 print(users)
                 for user in users {
+                    print("JG44444 {}", user)
                     if validateUser(user:user, name:self.username, password:self.password)
                     {
-                        print("JG4")
-
                         self.authenticationDidSucceed = true
                         self.authenticationDidFail = false
                         appDelegate.setUser(user:user.name!)
                         appDelegate.setUserId(id: Int(bitPattern: user.id))
                         break
                     }else {
-                        print("JG5")
                         self.authenticationDidFail = true
-                    
                     }
                 }
             })
             {
                 LoginButtonContent()
             }
-        }
+        } // end vstack
         .padding()
         //end of vstack
             if authenticationDidSucceed {
 
-                //HostingTabBar()
-                TwoView(username: appDelegate.getUser())
+                HostingTabBar()
+                //UserArtistView(username: appDelegate.getUser())
                 
                 //OneView()
                         }
@@ -524,7 +383,7 @@ struct ContentView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         //ContentView()
-        ContentView().environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
+        LoginView().environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
     }
 }
 

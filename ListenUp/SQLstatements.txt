@@ -14,6 +14,11 @@ sqlite3 /Users/jganley/Library/Developer/CoreSimulator/Devices/1EB822A9-E14B-4BF
 insert into ZARTIST (Z_PK, Z_ENT, Z_OPT, ZNAME, ZUSERID, ZUSERNAME, ZINSTA, ZIMAGE , ZYOUTUBE , ZTWITTER) values (1,1,1, 'dua', 1,'JG', 'www.instagram.com/dualipa/','yt3.ggpht.com/ytc/AAUvwnhDZXpXUoc7YNL7h7j6Y4o6lZnEPuWDy2lbuBO4NQ=s900-c-k-c0x00ffffff-no-rj','www.youtube.com/channel/UC-J-KZfRV8c13fOCkhXdLiQ','twitter.com/DUALIPA');
 insert into ZARTIST (Z_PK, Z_ENT, Z_OPT, ZNAME, ZUSERID, ZUSERNAME, ZINSTA, ZIMAGE , ZYOUTUBE , ZTWITTER) values (2,1,1, 'dua', 3,'JJ', 'www.instagram.com/dualipa/','yt3.ggpht.com/ytc/AAUvwnhDZXpXUoc7YNL7h7j6Y4o6lZnEPuWDy2lbuBO4NQ=s900-c-k-c0x00ffffff-no-rj','www.youtube.com/channel/UC-J-KZfRV8c13fOCkhXdLiQ','twitter.com/DUALIPA');
 insert into ZARTIST (Z_PK, Z_ENT, Z_OPT, ZNAME, ZUSERID, ZUSERNAME, ZINSTA, ZIMAGE , ZYOUTUBE , ZTWITTER) values (3,1,1, 'billie', 1, 'JG', 'www.instagram.com/billieeilish/','static01.nyt.com/images/2020/03/15/magazine/15mag-billie-03/15mag-billie-03-mediumSquareAt3X-v3.jpg','www.youtube.com/channel/UCiGm_E4ZwYSHV3bcW1pnSeQ','twitter.com/billieeilish');
+insert into ZARTIST (Z_PK, Z_ENT, Z_OPT, ZNAME, ZUSERID, ZUSERNAME, ZINSTA, ZIMAGE , ZYOUTUBE , ZTWITTER) values (3,1,1, 'meg', 1, 'JG', 'www.instagram.com/theestallion/','static01.nyt.com/images/2020/03/15/magazine/15mag-billie-03/15mag-billie-03-mediumSquareAt3X-v3.jpg','www.youtube.com/channel/UCKrdjiuS66yXOdEZ_cOD_TA','twitter.com/theestallion');
+insert into ZARTIST (Z_PK, Z_ENT, Z_OPT, ZNAME, ZUSERID, ZUSERNAME, ZINSTA, ZIMAGE , ZYOUTUBE , ZTWITTER) values (3,1,1, 'cardi', 1, 'JG', 'www.instagram.com/iamcardib//','static01.nyt.com/images/2020/03/15/magazine/15mag-billie-03/15mag-billie-03-mediumSquareAt3X-v3.jpg','www.youtube.com/channel/UCxMAbVFmxKUVGAll0WVGpFw','twitter.com/iamcardib');
+insert into ZARTIST (Z_PK, Z_ENT, Z_OPT, ZNAME, ZUSERID, ZUSERNAME, ZINSTA, ZIMAGE , ZYOUTUBE , ZTWITTER) values (3,1,1, 'joji', 1, 'JG', 'www.instagram.com/sushitrash//','static01.nyt.com/images/2020/03/15/magazine/15mag-billie-03/15mag-billie-03-mediumSquareAt3X-v3.jpg','www.youtube.com/channel/UCFl7yKfcRcFmIUbKeCA-SJQ','twitter.com/sushitrash');
+insert into ZARTIST (Z_PK, Z_ENT, Z_OPT, ZNAME, ZUSERID, ZUSERNAME, ZINSTA, ZIMAGE , ZYOUTUBE , ZTWITTER) values (3,1,1, 'nicki', 3, 'JJ', 'www.instagram.com/nickiminaj//','static01.nyt.com/images/2020/03/15/magazine/15mag-billie-03/15mag-billie-03-mediumSquareAt3X-v3.jpg','www.youtube.com/channel/UC3jOd7GUMhpgJRBhiLzuLsg','twitter.com/nickiminaj?lang=en');
+insert into ZARTIST (Z_PK, Z_ENT, Z_OPT, ZNAME, ZUSERID, ZUSERNAME, ZINSTA, ZIMAGE , ZYOUTUBE , ZTWITTER) values (3,1,1, 'daniel', 3, 'JJ', 'www.instagram.com/danielcaesar/','static01.nyt.com/images/2020/03/15/magazine/15mag-billie-03/15mag-billie-03-mediumSquareAt3X-v3.jpg','www.youtube.com/channel/UCKJg5mkBn18dtRFWUy_v1mw','twitter.com/danielcaesar');
 
 
 
@@ -23,14 +28,13 @@ ZARTIST       ZUSER         Z_METADATA    Z_MODELCACHE  Z_PRIMARYKEY
 sqlite> select * from ZUSER;
 sqlite> select * from ZARTIST
    ...> ;
-sqlite> insert into ZUSER (name, password) values ('JG', 'foo');
- insert into ZARTIST (userid, name, image, insta, twitter, youtube) values ('JG', 'foo');
 
 
 Error: table ZUSER has no column named name
 sqlite> .schema ZUSER
 CREATE TABLE ZUSER ( Z_PK INTEGER PRIMARY KEY, Z_ENT INTEGER, Z_OPT INTEGER, ZNAME VARCHAR , ZPASSWORD VARCHAR);
 sqlite> insert into ZUSER (zname, zpassword) values ('JG', 'foo');
+sqlite> insert into ZUSER (zname, zpassword) values ('JJ', '1');
 sqlite> select * from ZUSER;
 1|||JG|foo
 sqlite>

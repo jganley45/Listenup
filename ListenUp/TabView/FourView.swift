@@ -9,26 +9,17 @@ import SwiftUI
 
 
 struct FourView: View {
+    @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
     
     var body: some View {
-//        ZStack{
-//            LinearGradient(gradient: Gradient(colors: [.top, .bottom]), startPoint: .top, endPoint: .bottom)
-//                .edgesIgnoringSafeArea(.all)
-//                }
-            NavigationView {
-                List {
-                    ForEach(0 ..< 100) {
-                          Text("Notification \($0)")
-                            .foregroundColor(.white)
-                    }.listRowBackground(Color.top)
-                    } //.navigationBarTitle("Notifications")
-                   .navigationBarTitle("Notifications", displayMode: .inline)
-                   .background(NavigationConfigurator { nc in
-                        nc.navigationBar.barTintColor = .purple
-                        nc.navigationBar.titleTextAttributes = [.foregroundColor : UIColor.white]
-                            })
-            }
-        
+        ZStack {
+            LinearGradient(gradient: Gradient(colors: [.top, .bottom]), startPoint: .top, endPoint: .bottom)
+                .edgesIgnoringSafeArea(.all)
+             NavigationLink(destination: UserArtistView(username: appDelegate.getUser())) {
+              }.buttonStyle(PlainButtonStyle())
+        }
+        .navigationTitle("All Artists")
+        .navigationBarHidden(false)
         
     }
 }

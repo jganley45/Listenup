@@ -110,40 +110,40 @@ struct OneView: View {
             
             
             
-            ScrollView(.horizontal){
-                
-                HStack(spacing: 10) {
-                    
-                    VStack {
-                        NavigationLink(destination: ThreeView()) {
-                           NewRelease()
-                        }.buttonStyle(PlainButtonStyle())
-                    }
-                    
+//           ScrollView(.horizontal){
+//                
+//                HStack(spacing: 10) {
+//                    
 //                    VStack {
-//                        NavigationLink(destination: AriView()) {
-//                           Positions()
+//                        NavigationLink(destination: ThreeView()) {
+//                           NewRelease()
 //                        }.buttonStyle(PlainButtonStyle())
 //                    }
 //                    
-//                    VStack {
-//                        VStack {
-//                            NavigationLink(destination: JojiView()) {
-//                               Weekend()
-//                            }.buttonStyle(PlainButtonStyle())
-//                        }
-//                }
-//                    VStack {
-//                        VStack {
-//                            NavigationLink(destination: JojiView()) {
-//                               Mariah()
-//                            }.buttonStyle(PlainButtonStyle())
-//                        }
-//                }
-
-                }.padding()//end of hstack
-                
-            }
+////                    VStack {
+////                        NavigationLink(destination: AriView()) {
+////                           Positions()
+////                        }.buttonStyle(PlainButtonStyle())
+////                    }
+////                    
+////                    VStack {
+////                        VStack {
+////                            NavigationLink(destination: JojiView()) {
+////                               Weekend()
+////                            }.buttonStyle(PlainButtonStyle())
+////                        }
+////                }
+////                    VStack {
+////                        VStack {
+////                            NavigationLink(destination: JojiView()) {
+////                               Mariah()
+////                            }.buttonStyle(PlainButtonStyle())
+////                        }
+////                }
+//
+//                }.padding()//end of hstack
+//                
+//           }
             
             Divider()
             Spacer()
@@ -203,5 +203,76 @@ struct OneView_Previews: PreviewProvider {
     static var previews: some View {
         //OneView()
         OneView().environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
+    }
+}
+
+struct ThirdView: View {
+    @Environment(\.presentationMode) var presentationMode
+    @State var showDetails = false
+    
+ 
+    
+    var body: some View {
+        
+//        List(modelData) { weather in
+//              HStack {
+//                  // 2.
+//                  Image(systemName: weather.image)
+//                      .frame(width: 50, height: 10, alignment: .leading)
+//                  Text("\(weather.temp)º")
+//                      .frame(width: 50, height: 10, alignment: .leading)
+//                  VStack {
+//                      Text(weather.city)
+//                  }
+//              }.font(.title)
+//          }
+       
+        
+           
+//            VStack {
+//                //background(Color.blue)
+//                Image("kim_profile")
+//                    //.clipShape(Circle())
+//                    .resizable()
+//                    .scaledToFit()
+//                    .foregroundColor(.black)
+//    //            Button(action: {
+//    //                print("b3 tapped")
+//    //        }) {KimPhoto()}
+//    //            .clipShape(Rectangle())
+//    //            .foregroundColor(.purple)
+//    //            .shadow(color: .black, radius: 2)
+//    //            .shadow(color: .black, radius: 10)
+//            }
+
+        ZStack {
+            LinearGradient(gradient: Gradient(colors: [.top, .bottom]), startPoint: .top, endPoint: .bottom)
+                .edgesIgnoringSafeArea(.all)
+           
+            //Spacer()
+            VStack{
+              
+                HStack(spacing: 35) {
+                    Button(action: {
+                        print("bc1 tapped")
+                    }) {InstaCapsule(artistLink:"")}
+                   
+                    Button(action: {
+                        print("bc2 tapped")
+                    }) {TwitterCapsule(artistLink:"")}
+                        
+                    Button(action: {
+                        print("bc3 tapped")
+                    }) {YouTubeCapsule(artistLink:"")}
+                }
+                Button("Dismiss") {
+                    self.presentationMode.wrappedValue.dismiss()
+                }
+            
+                }
+            }
+           
+
+    
     }
 }

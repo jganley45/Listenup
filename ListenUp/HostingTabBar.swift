@@ -14,53 +14,39 @@ struct HostingTabBar: View {
     @Environment(\.managedObjectContext) private var viewContext
    @FetchRequest(entity: Artist.entity(), sortDescriptors: [])
     var artists: FetchedResults<Artist>
-   
-    
-    
-    
-    /*
-    private enum Tab: Hashable {
-            case one
-            case two
-            case three
-            case four}
- */
-    //@State private var selectedTab: Tab = .one
-    @State private var selection = 0
+  
+    @State private var selection = 	1
     
     var body: some View {
 
         //NavigationView{
         TabView(selection: $selection ) {
-           OneView()
-            .tag(0)
-            .tabItem {
-               Image(systemName: "flame.fill").font(.title)
-
-            }
-            TwoView(username: "")
-            .tag(1)
-            .tabItem {
-               Image(systemName: "heart.fill").font(.title)
-          }
-          ThreeView()
-            .tag(2)
-            .tabItem {
-               Image(systemName: "person.3.fill").font(.title)
-          }
-          FourView()
-            .tag(3)
-            .tabItem {
-               Image(systemName: "bell.fill").font(.title)
-          }
-          FiveView()
-              .tag(3)
+            
+            UserArtistView(username: appDelegate.getUser())
+                .tag(1)
+                .tabItem {
+                   Image(systemName: "heart.fill").font(.title)
+              }
+           
+//
+//          ThreeView()
+//            .tag(2)
+//            .tabItem {
+//               Image(systemName: "person.3.fill").font(.title)
+//          }
+                FourView()
+                  .tag(3)
+                  .tabItem {
+                     Image(systemName: "bell.fill").font(.title)
+                }
+          LoginView()
+              .tag(4)
               .tabItem {
-                 Image(systemName: "person.crop.circle.fill").font(.title)
-            }
+                 Image(systemName: "lock.fill").font(.title)
+              }.navigationBarHidden(true)
 
         } //.tabViewStyle(PageTabViewStyle()) //end of tab view
-       // .navigationBarHidden(true)
+        .navigationBarHidden(false)
 
        }//end of body
 
@@ -76,14 +62,14 @@ struct HostingTabBar: View {
 
 
 
-struct HostingTabBar_Previews: PreviewProvider {
-    
-    
-    static var previews: some View {
-        HostingTabBar()
-
-        ContentView().environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
-            }
-
-}
+//struct HostingTabBar_Previews: PreviewProvider {
+//    
+//    
+//    static var previews: some View {
+//        HostingTabBar()
+//
+//        ContentView().environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
+//            }
+//
+//}
 

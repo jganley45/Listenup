@@ -8,10 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		1B68C1F92576DFB5005FE3F3 /* ListenUpApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B68C1F82576DFB5005FE3F3 /* ListenUpApp.swift */; };
-		1B68C1FB2576DFB5005FE3F3 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B68C1FA2576DFB5005FE3F3 /* ContentView.swift */; };
+		1B68C1FB2576DFB5005FE3F3 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B68C1FA2576DFB5005FE3F3 /* LoginView.swift */; };
 		1B68C1FD2576DFB8005FE3F3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1B68C1FC2576DFB8005FE3F3 /* Assets.xcassets */; };
 		1B68C2002576DFB8005FE3F3 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1B68C1FF2576DFB8005FE3F3 /* Preview Assets.xcassets */; };
-		AF43663A257D703400F38389 /* TwoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF436639257D703400F38389 /* TwoView.swift */; };
+		AF43663A257D703400F38389 /* UserArtistView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF436639257D703400F38389 /* UserArtistView.swift */; };
 		AF43663D257D703F00F38389 /* ThreeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF43663C257D703F00F38389 /* ThreeView.swift */; };
 		AF436640257D705900F38389 /* FourView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF43663F257D705900F38389 /* FourView.swift */; };
 		AF436643257D709D00F38389 /* HostingTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF436642257D709D00F38389 /* HostingTabBar.swift */; };
@@ -29,11 +29,11 @@
 /* Begin PBXFileReference section */
 		1B68C1F52576DFB5005FE3F3 /* ListenUp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ListenUp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1B68C1F82576DFB5005FE3F3 /* ListenUpApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListenUpApp.swift; sourceTree = "<group>"; };
-		1B68C1FA2576DFB5005FE3F3 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		1B68C1FA2576DFB5005FE3F3 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		1B68C1FC2576DFB8005FE3F3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1B68C1FF2576DFB8005FE3F3 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		1B68C2012576DFB8005FE3F3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		AF436639257D703400F38389 /* TwoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwoView.swift; sourceTree = "<group>"; };
+		AF436639257D703400F38389 /* UserArtistView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserArtistView.swift; sourceTree = "<group>"; };
 		AF43663C257D703F00F38389 /* ThreeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreeView.swift; sourceTree = "<group>"; };
 		AF43663F257D705900F38389 /* FourView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FourView.swift; sourceTree = "<group>"; };
 		AF436642257D709D00F38389 /* HostingTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HostingTabBar.swift; sourceTree = "<group>"; };
@@ -82,7 +82,7 @@
 				AF43669D257FD2D200F38389 /* ArtistView */,
 				1B68C1F82576DFB5005FE3F3 /* ListenUpApp.swift */,
 				AF436642257D709D00F38389 /* HostingTabBar.swift */,
-				1B68C1FA2576DFB5005FE3F3 /* ContentView.swift */,
+				1B68C1FA2576DFB5005FE3F3 /* LoginView.swift */,
 				F1E376E1262B5FEC00F53C9F /* Persistence.swift */,
 				AFD45C2C257B221C000DEE85 /* ColorManager.swift */,
 				AFD45C29257B20CC000DEE85 /* colors.xcassets */,
@@ -107,7 +107,7 @@
 			isa = PBXGroup;
 			children = (
 				AF436695257ED7B400F38389 /* OneView.swift */,
-				AF436639257D703400F38389 /* TwoView.swift */,
+				AF436639257D703400F38389 /* UserArtistView.swift */,
 				AF43663C257D703F00F38389 /* ThreeView.swift */,
 				AF43663F257D705900F38389 /* FourView.swift */,
 				AF4366AB257FF9F700F38389 /* FiveView.swift */,
@@ -195,12 +195,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				AFD45C2D257B221C000DEE85 /* ColorManager.swift in Sources */,
-				AF43663A257D703400F38389 /* TwoView.swift in Sources */,
+				AF43663A257D703400F38389 /* UserArtistView.swift in Sources */,
 				F1E376E6262B629D00F53C9F /* Model.xcdatamodeld in Sources */,
 				AF4366A9257FDEDB00F38389 /* HomeScreenButtons.swift in Sources */,
 				F1E376E2262B5FED00F53C9F /* Persistence.swift in Sources */,
 				AF43663D257D703F00F38389 /* ThreeView.swift in Sources */,
-				1B68C1FB2576DFB5005FE3F3 /* ContentView.swift in Sources */,
+				1B68C1FB2576DFB5005FE3F3 /* LoginView.swift in Sources */,
 				F1E376EC262C820D00F53C9F /* BlankArtistView.swift in Sources */,
 				AF4366AC257FF9F700F38389 /* FiveView.swift in Sources */,
 				AF436640257D705900F38389 /* FourView.swift in Sources */,
