@@ -1,0 +1,61 @@
+-> A short report, describing the problem the project attempts to solve, its goals, alternative approaches to solving the problem, the chosen approach, and a   
+justification for choosing it over other approaches (as appropriate for your case) *
+
+This project presented a lot of problems to us as we began working on it. Last semester, we just focused on the UI aspect of the app but ittle did we know that 
+implementing a database into the prebuilt UI would be a tough thing to do. The problem that this app aimed to solve was the lack of efficient platforms that serve 
+as a hub of all information related to musical artists. There are many apps on the market that provide either just latest releases or updates but not many exist to 
+do it all. However, for the purpose of this app in this class we focused on one aspect of the app which is being able to access all the artist and save the favorite 
+ones to later pull their information. Our goal for this semester was to be able to implement data in logging into the app and being able to save the changes. We 
+wanted the users to be able to see a range of artists and pick their favorites and later show them on their favorites page. Alternative approaches to this problem 
+would be relying on apps like Apple music, Spotify or Beepr to make the best of the information provided and possibly request for changes/updates to be made. These
+apps allow you to access different artists and see their current music, however, we want to be able to allow users to see all information including social media on 
+their pages. And so in our approach we allow users to pick the exact artists they want to get notifications from and get the latest news on. Although we didn't get 
+to spend time working on the UI this semester, our basic app shows how simple and efficient we would want our approach to be in order to make it easier for the user 
+to navigate and get what they want.
+
+
+
+
+->Detailed, step-by-step, build/installation/initialization/launch instructions *
+
+- download/open Xcode
+- then open the xcode file of the project listed in the repository
+- once you have openened the file build the application and click the play button in the top right side
+- should open the iPhone simulator
+- wait for the app to open
+- login with either of the credentials below
+
+username: JG
+password: foo
+
+username: JJ
+password: 1
+
+
+
+
+->Detailed instructions how to use the software (if you are convinced it is self-explanatory and does not need instructions feel free to select "3") *
+
+You will ideally need Xcode to run the project. There is an Xcode file in the repository, opening it should open a window and when you see all the files, 
+you will want to click the play button in the top right hand corner. This should open the iPhone simulator and once it opens the app you can use the credentials 
+
+username: JG
+password: foo
+
+or
+
+username: JJ
+password: 1
+
+These are two diffferent users and you should notice different information within the app when switching the accounts. 
+
+
+
+
+
+->All materials, including (as applicable) source codes, images, icons, header files, libraries, databases *
+
+All materials including source codes, images, icons, header files are in the project folder. But unfortunately we cannot provide accurate databases as we had to 
+manually code the data in and it was a lengthy process. It works just fine on our computers and runs smoothly, however, if you were to download our project it 
+wouldn't run as you'd be missing the data. We submitted a video to show the work we have done and show how it functions, but unless we run you through the 
+meticulous process of inserting the data on your computer as well the program won't run like it's intended to.
